@@ -97,6 +97,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 2.5
+  bombRange: 0
+  Horizontal: {fileID: 1377289772828934, guid: 7f3434c1b83d45d45b5f6ff185f07e02, type: 2}
+  HorizLeft: {fileID: 1931046414450632, guid: 685764c06b991564a965399370408694, type: 2}
+  HorizRight: {fileID: 1038984746851042, guid: 0d5df54009d4372409d820469fcb6799, type: 2}
+  Middle: {fileID: 1904028470999156, guid: 7a103a501ecef3348a45d8941785b0c1, type: 2}
+  Vertical: {fileID: 1628977665848558, guid: b5f8c20ae58d30841a253939b700d0ac, type: 2}
+  VertDown: {fileID: 1103626924720044, guid: 6bd89463debb7424b9434b96f74eedaa, type: 2}
+  VertUp: {fileID: 1245098587330378, guid: c4710b643537e974c8593964f7be2146, type: 2}
 --- !u!212 &212915995931275264
 SpriteRenderer:
   m_ObjectHideFlags: 1

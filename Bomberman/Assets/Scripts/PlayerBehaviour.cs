@@ -5,15 +5,14 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour {
 
 	public float speed = 6;
-	public static int bombPower; //Variável estática que guarda a força da bomba para ser usada na explosão
-	public int bombPowerLimit = 5; //Limite de blocos de 
+	public static int bombPower; //Variável estática que guarda o poder da bomba para ser usada na explosão
+	public int bombPowerLimit = 5; //Limite geral de poder da bomba
 
 	void Start(){
-		bombPower = 1;
+		bombPower = 2;
 	}
 
-
-	void FixedUpdate(){
+	void FixedUpdate(){		
 		float h = Input.GetAxisRaw("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");	
 		GetComponent<Rigidbody2D> ().velocity = new Vector2 (h, v) * speed;
@@ -23,8 +22,8 @@ public class PlayerBehaviour : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
-		if (other.gameObject.tag == "BombUp" ) {
-			if(bombPower < bombPowerLimit)
+		if (other.gameObject.tag == "BombUp" ) { //Ao colidir com o objeto BombUp (power up que aumenta
+			if(bombPower < bombPowerLimit)		 // o poder da bomba), aumenta o poder em 1
 			bombPower++;
 		}
 	}
