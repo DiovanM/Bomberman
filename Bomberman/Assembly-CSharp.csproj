@@ -51,8 +51,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\asd.cs" />
      <Compile Include="Assets\Scripts\BombBehaviour.cs" />
      <Compile Include="Assets\Scripts\BombDrop.cs" />
+     <Compile Include="Assets\Scripts\DestroyMe.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
  <Reference Include="UnityEngine.UI">

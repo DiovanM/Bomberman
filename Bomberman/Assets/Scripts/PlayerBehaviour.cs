@@ -9,7 +9,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	public int bombPowerLimit = 5; //Limite geral de poder da bomba
 
 	void Start(){
-		bombPower = 2;
+		bombPower = 1;
 	}
 
 	void FixedUpdate(){		

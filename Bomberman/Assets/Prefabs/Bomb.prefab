@@ -98,6 +98,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 2.5
   bombRange: 0
+  ExplosionStop:
+    serializedVersion: 2
+    m_Bits: 256
   Horizontal: {fileID: 1377289772828934, guid: 7f3434c1b83d45d45b5f6ff185f07e02, type: 2}
   HorizLeft: {fileID: 1931046414450632, guid: 685764c06b991564a965399370408694, type: 2}
   HorizRight: {fileID: 1038984746851042, guid: 0d5df54009d4372409d820469fcb6799, type: 2}
