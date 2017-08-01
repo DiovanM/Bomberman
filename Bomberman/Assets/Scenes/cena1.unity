@@ -15363,11 +15363,6 @@ Prefab:
       propertyPath: m_Name
       value: Bomberman
       objectReference: {fileID: 0}
-    - target: {fileID: 114012879162798758, guid: 32dcb3fddf30b834a8169bd5a2bbc38c,
-        type: 2}
-      propertyPath: speed
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
   m_IsPrefabParent: 0

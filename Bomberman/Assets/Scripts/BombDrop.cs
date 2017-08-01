@@ -9,7 +9,7 @@ public class BombDrop : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKeyDown("space")){
+		if (Input.GetKeyDown("space") && PlayerBehaviour.live == true){
 			Vector2 pos = transform.position;
 			pos.x = (Mathf.Round (pos.x));
 			pos.y = (Mathf.Round (pos.y));
