@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Bomba
   - Destroyable
+  - BombUp
   layers:
   - Default
   - TransparentFX

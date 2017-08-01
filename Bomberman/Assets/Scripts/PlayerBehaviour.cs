@@ -18,6 +18,10 @@ public class PlayerBehaviour : MonoBehaviour {
 		if (live == true) {
 			Move ();
 		} else {
+
+			GetComponent<Rigidbody2D> ().constraints = 
+			RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
+
 			GetComponent<Animator> ().SetBool("Death", true);
 		}
 	}

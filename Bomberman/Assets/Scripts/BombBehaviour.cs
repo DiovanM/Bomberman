@@ -36,8 +36,7 @@ public class BombBehaviour : MonoBehaviour {
 		RaycastHit2D hitRight = Physics2D.Raycast (transform.position, Vector2.right, bombRange, ExplosionStop);
         
 		if (hitUp.collider != null) {
-            explosionRangeUp = Mathf.Round(hitUp.collider.transform.position.y - transform.position.y);
-            Debug.Log("Up " + explosionRangeUp);
+            explosionRangeUp = Mathf.Round(hitUp.collider.transform.position.y - transform.position.y);           
         }
         else
         { 
@@ -45,15 +44,13 @@ public class BombBehaviour : MonoBehaviour {
 		}
 		if (hitDown.collider != null) {						
 			explosionRangeDown = Mathf.Round(transform.position.y - hitDown.collider.transform.position.y );
-			Debug.Log ("Down "+explosionRangeDown);
 		}
         else
         {
 			explosionRangeDown = bombRange;
         }
 		if (hitLeft.collider != null) {			
-			explosionRangeLeft = Mathf.Round(transform.position.x - hitLeft.collider.transform.position.x );
-			Debug.Log ("Left "+explosionRangeLeft);				
+			explosionRangeLeft = Mathf.Round(transform.position.x - hitLeft.collider.transform.position.x );						
 		}
         else
         {
@@ -61,7 +58,6 @@ public class BombBehaviour : MonoBehaviour {
         }
 		if (hitRight.collider != null) {						
 			explosionRangeRight = Mathf.Round(hitRight.collider.transform.position.x -transform.position.x );
-			Debug.Log ("Right "+explosionRangeRight);
 		}
         else
         {
