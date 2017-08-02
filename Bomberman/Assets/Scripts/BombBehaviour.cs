@@ -30,10 +30,15 @@ public class BombBehaviour : MonoBehaviour {
 	void FixedUpdate () {			
 		#region Verifica a distancia até os blocos que colidirá(ou não) em todas as direções
 
-		RaycastHit2D hitUp = Physics2D.Raycast (transform.position, Vector2.up, bombRange, ExplosionStop);
-		RaycastHit2D hitDown = Physics2D.Raycast (transform.position, Vector2.down, bombRange, ExplosionStop);
-		RaycastHit2D hitLeft = Physics2D.Raycast (transform.position, Vector2.left, bombRange, ExplosionStop);
-		RaycastHit2D hitRight = Physics2D.Raycast (transform.position, Vector2.right, bombRange, ExplosionStop);
+		Vector2 baseUp = new Vector2(transform.position.x,transform.position.y +1);  //Começa o raycast 1 bloco de distância do centro da bomba
+		Vector2 baseDown = new Vector2(transform.position.x,transform.position.y -1);
+		Vector2 baseLeft = new Vector2(transform.position.x-1,transform.position.y);
+		Vector2 baseRight = new Vector2(transform.position.x+1,transform.position.y);
+
+		RaycastHit2D hitUp = Physics2D.Raycast (baseUp, Vector2.up, bombRange, ExplosionStop);
+		RaycastHit2D hitDown = Physics2D.Raycast (baseDown, Vector2.down, bombRange, ExplosionStop);
+		RaycastHit2D hitLeft = Physics2D.Raycast (baseLeft, Vector2.left, bombRange, ExplosionStop);
+		RaycastHit2D hitRight = Physics2D.Raycast (baseRight, Vector2.right, bombRange, ExplosionStop);
         
 		if (hitUp.collider != null) {
             explosionRangeUp = Mathf.Round(hitUp.collider.transform.position.y - transform.position.y);           

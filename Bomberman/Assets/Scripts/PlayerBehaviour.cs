@@ -9,7 +9,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	public float speedUpValue = 0.2f;
 	public static int bombPower;
 	public int bombPowerLimit = 5;
-	public int bombAmount;
+	public static int bombAmount;
 	public int bombAmountLimit = 5;
 	public static bool live;
 
@@ -48,6 +48,7 @@ public class PlayerBehaviour : MonoBehaviour {
 				Destroy (other.gameObject);
 		}
 	}
+
 	void Move(){
 		float h = Input.GetAxisRaw("Horizontal");
 		float v = Input.GetAxisRaw("Vertical");	
