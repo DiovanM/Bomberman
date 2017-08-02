@@ -11,11 +11,10 @@ public class Explosion : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){				
 		//Debug.Log(other.gameObject.name);
-		if (other.gameObject.CompareTag("Destroyable")||other.gameObject.CompareTag("Bomba")){
+		if (other.gameObject.CompareTag("Destroyable")||other.gameObject.CompareTag("Bomba")
+			||other.gameObject.CompareTag("BombAmountUp")||other.gameObject.CompareTag("BombPowerUp")
+			||other.gameObject.CompareTag("SpeedUp")){
 			Destroy (other.gameObject);
-		}
-		if (other.gameObject.CompareTag ("Bomba")) {
-			
 		}
 		if (other.gameObject.CompareTag ("Player")) {
 			PlayerBehaviour.live = false;

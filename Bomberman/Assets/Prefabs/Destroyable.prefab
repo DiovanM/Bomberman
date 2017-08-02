@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4301959537739330}
   - component: {fileID: 212810758647701734}
   - component: {fileID: 61561700699361696}
-  - component: {fileID: 114897458322247946}
   - component: {fileID: 50754374159544702}
+  - component: {fileID: 114918289968491358}
   m_Layer: 8
   m_Name: Destroyable
   m_TagString: Destroyable
@@ -88,7 +88,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114897458322247946
+--- !u!114 &114918289968491358
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -96,9 +96,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1271430038260758}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbfef90e34ab5044c94dfc76ff8f57af, type: 3}
+  m_Script: {fileID: 11500000, guid: 1721b404f3e581447abc6d506e3e9a4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InstantiatePowerUp: {fileID: 1141722674341286, guid: ed93e25f1b479cb4d881bd8b7dc5cd7e,
+    type: 2}
 --- !u!212 &212810758647701734
 SpriteRenderer:
   m_ObjectHideFlags: 1

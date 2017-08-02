@@ -1,11 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\DestroyMe.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\PlayerBehaviour.cs">
     <Files>
-      <File FileName="Assets\Scripts\PlayerBehaviour.cs" Line="21" Column="4" />
-      <File FileName="Assets\Scripts\BombBehaviour.cs" Line="38" Column="20" />
-      <File FileName="Assets\Scripts\Explosion.cs" Line="23" Column="3" />
-      <File FileName="Assets\Scripts\DestroyMe.cs" Line="6" Column="2" />
+      <File FileName="Assets\Scripts\PlayerBehaviour.cs" Line="34" Column="2" />
+      <File FileName="Assets\Scripts\BombBehaviour.cs" Line="31" Column="3" />
+      <File FileName="Assets\Scripts\Explosion.cs" Line="13" Column="38" />
+      <File FileName="Assets\Scripts\InstantiatePowerUp.cs" Line="24" Column="70" />
+      <File FileName="Assets\Scripts\PowerUpDrop.cs" Line="10" Column="67" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

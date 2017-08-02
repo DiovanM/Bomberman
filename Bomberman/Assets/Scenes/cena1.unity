@@ -2885,6 +2885,57 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1001 &259977176
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4621248545020724, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621248545020724, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 4.29
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621248545020724, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621248545020724, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621248545020724, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621248545020724, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621248545020724, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4621248545020724, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792861180619490, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
+      propertyPath: m_Name
+      value: Bomberman (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792861180619490, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 61297952964676920, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &262577183
 Prefab:
   m_ObjectHideFlags: 0
@@ -4979,7 +5030,8 @@ Prefab:
       propertyPath: m_Name
       value: Destroyable (45)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 0}
   m_ParentPrefab: {fileID: 100100000, guid: df1977054f827be47b45db5e8da9fa10, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &467709052 stripped
@@ -7534,6 +7586,26 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &761852726 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1792861180619490, guid: 32dcb3fddf30b834a8169bd5a2bbc38c,
+    type: 2}
+  m_PrefabInternal: {fileID: 259977176}
+--- !u!58 &761852727
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 761852726}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.37}
+  serializedVersion: 2
+  m_Radius: 0.43050277
 --- !u!1001 &763441098
 Prefab:
   m_ObjectHideFlags: 0
@@ -15362,6 +15434,10 @@ Prefab:
     - target: {fileID: 1792861180619490, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
       propertyPath: m_Name
       value: Bomberman
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792861180619490, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 32dcb3fddf30b834a8169bd5a2bbc38c, type: 2}

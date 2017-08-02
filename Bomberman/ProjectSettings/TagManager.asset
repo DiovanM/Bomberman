@@ -6,7 +6,10 @@ TagManager:
   tags:
   - Bomba
   - Destroyable
-  - BombUp
+  - BombPowerUp
+  - BombAmountUp
+  - SpeedUp
+  - Explosion
   layers:
   - Default
   - TransparentFX
