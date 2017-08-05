@@ -5,7 +5,7 @@ using UnityEngine;
 public class BombBehaviour : MonoBehaviour {
 
 	public float time = 3;
-	public int bombRange;
+	private int bombRange;
 	public static float explosionRangeUp, explosionRangeDown, explosionRangeLeft, explosionRangeRight;
 	public LayerMask ExplosionStop;
 	[Header("Explosion Prefabs")]
@@ -27,7 +27,7 @@ public class BombBehaviour : MonoBehaviour {
 		InstantiateExplosion ((int)explosionRangeUp,(int)explosionRangeDown,(int)explosionRangeLeft,(int)explosionRangeRight);
 	}
 
-	void FixedUpdate () {			
+	void Update () {			
 		#region Verifica a distancia até os blocos que colidirá(ou não) em todas as direções
 
 		Vector2 baseUp = new Vector2(transform.position.x,transform.position.y +1);  //Começa o raycast 1 bloco de distância do centro da bomba

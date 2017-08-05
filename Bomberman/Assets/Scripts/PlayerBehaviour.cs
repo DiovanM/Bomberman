@@ -7,17 +7,13 @@ public class PlayerBehaviour : MonoBehaviour {
 	public float speed = 6;
 	public float speedLimit = 8;
 	public float speedUpValue = 0.2f;
-	public static int bombPower;
+	public static int bombPower =1;
 	public int bombPowerLimit = 5;
-	public static int bombAmount;
+	public static int bombAmount =1;
 	public int bombAmountLimit = 5;
-	public static bool live;
+	public static bool live = true;
 
-	void Start(){
-		speed = 6;
-		bombPower = 1;
-		bombAmount = 1;
-		live = true;
+	void Start(){			
 	}
 
 	void FixedUpdate(){	
@@ -33,19 +29,18 @@ public class PlayerBehaviour : MonoBehaviour {
 	}
 
 	void OnCollisionEnter2D(Collision2D other){
-		if (other.gameObject.CompareTag ("BombPowerUp")) { // Aumenta o range da explosão em 1, e o atual for menor que o limite
-			if (bombPower < bombPowerLimit)		 
+		if (other.gameObject.CompareTag ("BombPowerUp")) { // Aumenta o range da explosão, se o atual for menor que o limite
+			if (bombPower < bombPowerLimit) {		 
 				bombPower++;
-				Destroy (other.gameObject);
+			}	Destroy (other.gameObject);
 		}else if (other.gameObject.CompareTag ("BombAmountUp")) { //Aumenta a quantidade de bombas, se a atual for menor que o limite
 			if (bombAmount < bombAmountLimit) {
 				bombAmount++;
-				Destroy (other.gameObject);
-			}
+			}	Destroy (other.gameObject);
 		}else if (other.gameObject.CompareTag ("SpeedUp")) { //Aumenta a velocidade do personagem, se a atual for menor que o limite
-			if (speed < speedLimit)		
+			if (speed < speedLimit) {		
 				speed += speedUpValue;
-				Destroy (other.gameObject);
+			}	Destroy (other.gameObject);
 		}
 	}
 

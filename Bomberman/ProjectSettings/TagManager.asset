@@ -10,6 +10,7 @@ TagManager:
   - BombAmountUp
   - SpeedUp
   - Explosion
+  - Undestroyable
   layers:
   - Default
   - TransparentFX

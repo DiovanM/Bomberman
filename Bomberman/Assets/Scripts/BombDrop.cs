@@ -16,7 +16,7 @@ public class BombDrop : MonoBehaviour {
 		}
 	}
 
-	void OnTriggerStay2D(Collider2D other){ // Verifica quando o Player sai de cima da bomba
+	void OnTriggerStay2D(Collider2D other){ // Verifica quando o Player está de cima da bomba
 		if (other.CompareTag ("Bomba")) {
 			canDrop = false;
 		}

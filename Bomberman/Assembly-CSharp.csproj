@@ -54,10 +54,13 @@
      <Compile Include="Assets\asd.cs" />
      <Compile Include="Assets\Scripts\BombBehaviour.cs" />
      <Compile Include="Assets\Scripts\BombDrop.cs" />
+     <Compile Include="Assets\Scripts\EnemyBehaviour.cs" />
      <Compile Include="Assets\Scripts\Explosion.cs" />
      <Compile Include="Assets\Scripts\InstantiatePowerUp.cs" />
      <Compile Include="Assets\Scripts\PlayerBehaviour.cs" />
      <Compile Include="Assets\Scripts\PowerUpDrop.cs" />
+     <Compile Include="Assets\Scripts\RestartScene.cs" />
+     <Compile Include="Assets\Scripts\teste.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
