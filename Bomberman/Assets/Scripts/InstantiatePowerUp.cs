@@ -16,15 +16,15 @@ public class InstantiatePowerUp : MonoBehaviour {
 	}
 
 	void instantiatePowerUp(){
-		int r = Random.Range (0,9);
+		int r = Random.Range (0,12);
 
-		if (r == 6) {
+		if (r == 0) {
 			Instantiate (BombAmountUp, transform.position,Quaternion.identity);
-		} else if (r == 7) {
+		} 
+		else if (r == 1) {
 			Instantiate (BombPowerUp, transform.position,Quaternion.identity);
-
 		}
-		else if (r == 8) {
+		else if (r == 2) {
 			Instantiate (SpeedUp, transform.position,Quaternion.identity);
 		}
 	}

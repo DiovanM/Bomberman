@@ -28,7 +28,7 @@ public class BombBehaviour : MonoBehaviour {
 	}
 
 	void Update () {			
-		#region Verifica a distancia até os blocos que colidirá(ou não) em todas as direções
+		//Verifica a distancia até os blocos que colidirá(ou não) em todas as direções
 
 		Vector2 baseUp = new Vector2(transform.position.x,transform.position.y +1);  //Começa o raycast 1 bloco de distância do centro da bomba
 		Vector2 baseDown = new Vector2(transform.position.x,transform.position.y -1);
@@ -68,7 +68,6 @@ public class BombBehaviour : MonoBehaviour {
         {
 			explosionRangeRight = bombRange;
         }
-		#endregion
 	}
 
     void InstantiateExplosion(int up, int down, int left, int right) {

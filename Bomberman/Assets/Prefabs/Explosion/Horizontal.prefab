@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61074027481552916}
   - component: {fileID: 114434539609868304}
   - component: {fileID: 50765780568151124}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Horizontal
   m_TagString: Explosion
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
 --- !u!95 &95435617329155222
 Animator:

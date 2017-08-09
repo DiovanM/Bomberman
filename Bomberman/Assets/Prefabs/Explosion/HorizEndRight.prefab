@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 61340825549878492}
   - component: {fileID: 114062478518799462}
   - component: {fileID: 50515401659582544}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HorizEndRight
   m_TagString: Explosion
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
 --- !u!95 &95996483413789292
 Animator:

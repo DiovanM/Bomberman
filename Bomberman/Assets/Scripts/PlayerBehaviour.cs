@@ -11,9 +11,10 @@ public class PlayerBehaviour : MonoBehaviour {
 	public int bombPowerLimit = 5;
 	public static int bombAmount =1;
 	public int bombAmountLimit = 5;
-	public static bool live = true;
+	public static bool live;
 
 	void Start(){			
+		live = true;
 	}
 
 	void FixedUpdate(){	

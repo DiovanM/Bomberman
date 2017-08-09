@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 95915665807173164}
   - component: {fileID: 114595091742054834}
   - component: {fileID: 50604536549233454}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Vertical
   m_TagString: Explosion
   m_Icon: {fileID: 0}
@@ -63,7 +63,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!61 &61200934126986782
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -87,7 +87,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.6, y: 0.6}
   m_EdgeRadius: 0
 --- !u!95 &95915665807173164
 Animator:
