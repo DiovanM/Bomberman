@@ -118,8 +118,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26f8456574da0db408490a7a3a42681c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
+  speed: 4
+  speedLimit: 8
+  speedUpValue: 0.2
   bombPowerLimit: 5
+  bombAmountLimit: 5
 --- !u!114 &114272871851059974
 MonoBehaviour:
   m_ObjectHideFlags: 1

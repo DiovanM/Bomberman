@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour {
 
-
-	void Start () {	
-		
-	}
-
 	void OnTriggerEnter2D(Collider2D other){				
 		//Debug.Log(other.gameObject.name);
 		if (other.gameObject.CompareTag("Destroyable")||other.gameObject.CompareTag("Bomba")
@@ -19,7 +14,6 @@ public class Explosion : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			PlayerBehaviour.live = false;
 		}
-
 	}
 
 	public void DestroyMe(){

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour {
 
-	public float speed = 6;
+	public float speed = 3;
 	public float speedLimit = 8;
 	public float speedUpValue = 0.2f;
 	public static int bombPower =1;
@@ -21,10 +21,8 @@ public class PlayerBehaviour : MonoBehaviour {
 		if (live == true) {
 			Move ();
 		} else {
-
 			GetComponent<Rigidbody2D> ().constraints = 
 			RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
-
 			GetComponent<Animator> ().SetBool("Death", true);
 		}
 	}

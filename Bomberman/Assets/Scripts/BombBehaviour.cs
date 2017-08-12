@@ -6,7 +6,7 @@ public class BombBehaviour : MonoBehaviour {
 
 	public float time = 3;
 	private int bombRange;
-	public static float explosionRangeUp, explosionRangeDown, explosionRangeLeft, explosionRangeRight;
+	public float explosionRangeUp, explosionRangeDown, explosionRangeLeft, explosionRangeRight;
 	public LayerMask ExplosionStop;
 	[Header("Explosion Prefabs")]
 	public GameObject Horizontal;
@@ -27,13 +27,13 @@ public class BombBehaviour : MonoBehaviour {
 		InstantiateExplosion ((int)explosionRangeUp,(int)explosionRangeDown,(int)explosionRangeLeft,(int)explosionRangeRight);
 	}
 
-	void Update () {			
+	void FixedUpdate () {			
 		//Verifica a distancia até os blocos que colidirá(ou não) em todas as direções
 
-		Vector2 baseUp = new Vector2(transform.position.x,transform.position.y +1);  //Começa o raycast 1 bloco de distância do centro da bomba
-		Vector2 baseDown = new Vector2(transform.position.x,transform.position.y -1);
-		Vector2 baseLeft = new Vector2(transform.position.x-1,transform.position.y);
-		Vector2 baseRight = new Vector2(transform.position.x+1,transform.position.y);
+		Vector2 baseUp = new Vector2(transform.position.x,transform.position.y +0.4f);  //Começa o raycast 0.4 de distância do centro da bomba, para nao colidir com a própria
+		Vector2 baseDown = new Vector2(transform.position.x,transform.position.y -0.4f);
+		Vector2 baseLeft = new Vector2(transform.position.x-0.4f,transform.position.y);
+		Vector2 baseRight = new Vector2(transform.position.x+0.4f,transform.position.y);
 
 		RaycastHit2D hitUp = Physics2D.Raycast (baseUp, Vector2.up, bombRange, ExplosionStop);
 		RaycastHit2D hitDown = Physics2D.Raycast (baseDown, Vector2.down, bombRange, ExplosionStop);

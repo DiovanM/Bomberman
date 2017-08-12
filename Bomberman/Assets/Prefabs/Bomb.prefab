@@ -87,7 +87,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.8, y: 0.8}
+  m_Size: {x: 0.7, y: 0.7}
   m_EdgeRadius: 0
 --- !u!95 &95914793261604998
 Animator:
@@ -118,6 +118,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 2.5
+  explosionRangeUp: 0
+  explosionRangeDown: 0
+  explosionRangeLeft: 0
+  explosionRangeRight: 0
   ExplosionStop:
     serializedVersion: 2
     m_Bits: 256
