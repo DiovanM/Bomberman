@@ -5,7 +5,7 @@ using UnityEngine;
 public class Explosion : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other){				
-		//Debug.Log(other.gameObject.name);
+		
 		if (other.gameObject.CompareTag("Destroyable")||other.gameObject.CompareTag("Bomba")
 			||other.gameObject.CompareTag("BombAmountUp")||other.gameObject.CompareTag("BombPowerUp")
 			||other.gameObject.CompareTag("SpeedUp")||other.gameObject.CompareTag("Enemy")){
@@ -16,7 +16,7 @@ public class Explosion : MonoBehaviour {
 		}
 	}
 
-	public void DestroyMe(){
+	public void DestroyMe(){ //Utilizado no animation event ao final da animação
 		Destroy (gameObject);
 	}
 

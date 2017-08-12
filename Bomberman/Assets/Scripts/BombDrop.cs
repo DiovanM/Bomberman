@@ -8,8 +8,7 @@ public class BombDrop : MonoBehaviour {
 	GameObject[] bombs;
 	private bool canDrop = true;
 
-	// Update is called once per frame
-	void Update () {
+	void Update () { //Verifica se a quantidade atual de bombas no cenário não ultrapassa o limite de bombas do player
 		bombs = GameObject.FindGameObjectsWithTag("Bomba");
 		if (bombs.Length < PlayerBehaviour.bombAmount && canDrop) {
 			bombDrop ();

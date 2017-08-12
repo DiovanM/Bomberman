@@ -20,7 +20,11 @@ public class EnemyBehaviour : MonoBehaviour {
 		rayDirection[3] = new Vector2 (1, 0);
 		pos = transform.position;
 		InitialDirection ();
-	}    
+	}
+
+	void OnDestroy(){
+		MenusBehaviour.enemyAmount -= 1;
+	}
 
 	void FixedUpdate()
 	{		

@@ -53,6 +53,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	}
 
 	public void DestroyMe(){
+		MenusBehaviour.playerIsAlive = false;
 		Destroy (gameObject);
 	}
 
