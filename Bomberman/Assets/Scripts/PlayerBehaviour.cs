@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour {
 
-	public float speed = 3;
+	public float speed;
 	public float speedLimit = 8;
-	public float speedUpValue = 0.2f;
-	public static int bombPower =1;
+	public float speedUpValue = 0.5f;
+	public static int bombPower;
 	public int bombPowerLimit = 5;
-	public static int bombAmount =1;
+	public static int bombAmount;
 	public int bombAmountLimit = 5;
 	public static bool live;
 
 	void Start(){			
 		live = true;
+		speed = 4;
+		bombPower = 1;
+		bombAmount = 1;
 	}
 
 	void FixedUpdate(){	
@@ -53,7 +56,7 @@ public class PlayerBehaviour : MonoBehaviour {
 	}
 
 	public void DestroyMe(){
-		MenusBehaviour.playerIsAlive = false;
+		MenusManager.playerIsAlive = false;
 		Destroy (gameObject);
 	}
 

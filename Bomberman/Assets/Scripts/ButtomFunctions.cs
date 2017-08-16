@@ -16,9 +16,4 @@ public class ButtomFunctions : MonoBehaviour {
 		Application.Quit();
 	}
 
-	public void Resume(){
-		MenusBehaviour.isPauseable = true;
-		pauseMenu.SetActive (false);
-		Time.timeScale = 1;
-	}
 }

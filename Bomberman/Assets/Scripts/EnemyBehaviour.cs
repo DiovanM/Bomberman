@@ -23,7 +23,7 @@ public class EnemyBehaviour : MonoBehaviour {
 	}
 
 	void OnDestroy(){
-		MenusBehaviour.enemyAmount -= 1;
+		MenusManager.enemyAmount -= 1;
 	}
 
 	void FixedUpdate()
