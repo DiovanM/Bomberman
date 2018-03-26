@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtomFunctions : MonoBehaviour {
 
-	public GameObject pauseMenu;
+    public GameObject startButton, levelOne, levelTwo;
 
 	public void Load(int sceneNumber){
 		Time.timeScale = 1;
@@ -15,5 +15,11 @@ public class ButtomFunctions : MonoBehaviour {
 	public void Quit(){
 		Application.Quit();
 	}
+
+    public void MenuButtons() {
+        startButton.SetActive(false);
+        levelOne.SetActive(true);
+        levelTwo.SetActive(true);
+    }
 
 }
