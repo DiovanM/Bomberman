@@ -296,7 +296,8 @@
     <Compile Include="Assets\General\Scripts\MenusManager.cs" />
     <Compile Include="Assets\General\Scripts\PlayerBehaviour.cs" />
     <Compile Include="Assets\General\Scripts\PowerUpDrop.cs" />
-    <Compile Include="Assets\Level1\Scripts\EnemyBehaviour.cs" />
+    <Compile Include="Assets\Level1\Scripts\FirstEnemyBehaviour.cs" />
+    <Compile Include="Assets\Level2\Scripts\BombEaterBehaviour.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

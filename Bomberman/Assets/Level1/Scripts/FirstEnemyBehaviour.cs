@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBehaviour : MonoBehaviour {
+public class FirstEnemyBehaviour : MonoBehaviour {
 
 	Vector2 pos;
 	public float speed = 1;

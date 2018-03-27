@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenusManager : MonoBehaviour {
 
@@ -54,5 +55,11 @@ public class MenusManager : MonoBehaviour {
 		Time.timeScale = 1;
 		levelMusic.Play ();
 	}
+
+    public void Load(int sceneNumber)
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(sceneNumber);
+    }
 
 }
