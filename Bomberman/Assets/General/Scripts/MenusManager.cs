@@ -9,13 +9,14 @@ public class MenusManager : MonoBehaviour {
 	public static int enemyAmount;
 	public GameObject stageClear, youDied, winLoseMenu, pauseMenu;
 	public AudioSource levelMusic, VictoryMusic;
-	GameObject[] enemies;
+	GameObject[] enemies, bombEater;
 
 	void Start(){
 		playerIsAlive = true;
 		isPauseable = true;
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-		enemyAmount = enemies.Length;
+        bombEater = GameObject.FindGameObjectsWithTag("BombEater");
+        enemyAmount = bombEater.Length + enemies.Length;       
 	}
 
 	void FixedUpdate(){		

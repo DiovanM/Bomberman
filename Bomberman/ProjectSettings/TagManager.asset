@@ -12,6 +12,7 @@ TagManager:
   - Explosion
   - Undestroyable
   - Enemy
+  - BombEater
   layers:
   - Default
   - TransparentFX

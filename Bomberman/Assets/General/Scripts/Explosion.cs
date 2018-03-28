@@ -14,10 +14,13 @@ public class Explosion : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			PlayerBehaviour.live = false;
 		}
+        if (other.gameObject.CompareTag("BombEater")) {
+            BombEaterBehaviour.hittable = false;
+        }
 	}
 
 	public void DestroyMe(){ //Utilizado no animation event ao final da animação
 		Destroy (gameObject);
-	}
+	}    
 
 }

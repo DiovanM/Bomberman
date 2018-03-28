@@ -13,8 +13,15 @@ public class BombEaterBehaviour : MonoBehaviour
     private Vector2 facingRayInitial;
     private bool orientation, isValid;
 
+    public static int life;
+    public static float time;
+    public static bool hittable = true;
+    public static Rigidbody2D rig;
+
     void Start()
     {
+        life = 3;
+        rig = GetComponent<Rigidbody2D>();
         rayDirection[0] = new Vector2(0, 1);
         rayDirection[1] = new Vector2(0, -1);
         rayDirection[2] = new Vector2(-1, 0);
@@ -30,33 +37,42 @@ public class BombEaterBehaviour : MonoBehaviour
 
     void FixedUpdate()
     {
-        Move(randomIndex);
-        facingRayInitial = new Vector2(transform.position.x, transform.position.y - 0.3f);
-        RaycastHit2D facing = Physics2D.Raycast(facingRayInitial, rayDirection[randomIndex], 0.3f, checkOnlyThis);
-        if (facing.collider != null)
-        {
-            switch (randomIndex)
-            {
-                case 0:
-                    randomIndex = 1;
-                    break;
-                case 1:
-                    randomIndex = 0;
-                    break;
-                case 2:
-                    randomIndex = 3;
-                    break;
-                case 3:
-                    randomIndex = 2;
-                    break;
-            }
-        }
+        GotHit();
 
-        if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
-            || transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1)
+        if (life <= 0) {           
+            Destroy(gameObject);
+        }
+        if (hittable)
         {
-            ChangeDirection();
-            pos = transform.position;
+
+            Move(randomIndex);
+            facingRayInitial = new Vector2(transform.position.x, transform.position.y - 0.3f);
+            RaycastHit2D facing = Physics2D.Raycast(facingRayInitial, rayDirection[randomIndex], 0.3f, checkOnlyThis);
+            if (facing.collider != null)
+            {
+                switch (randomIndex)
+                {
+                    case 0:
+                        randomIndex = 1;
+                        break;
+                    case 1:
+                        randomIndex = 0;
+                        break;
+                    case 2:
+                        randomIndex = 3;
+                        break;
+                    case 3:
+                        randomIndex = 2;
+                        break;
+                }
+            }
+
+            if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
+                || transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1)
+            {
+                ChangeDirection();
+                pos = transform.position;
+            }
         }
     }
 
@@ -148,6 +164,24 @@ public class BombEaterBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerBehaviour.live = false;
+        }
+    }
+
+    private void GotHit()
+    {
+        if (hittable == false)
+        {
+            transform.position = transform.position;
+            GetComponent<Animator>().SetBool("isHit", true);
+            time += Time.deltaTime;
+            if (time >= 0.7)
+            {               
+                GetComponent<Rigidbody2D>().isKinematic = false;
+                life -= 1;               
+                hittable = true;
+                time = 0;
+                GetComponent<Animator>().SetBool("isHit", false);
+            }
         }
     }
 }
