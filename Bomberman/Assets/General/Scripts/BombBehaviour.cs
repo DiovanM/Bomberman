@@ -17,14 +17,18 @@ public class BombBehaviour : MonoBehaviour {
 	public GameObject VertDown;
 	public GameObject VertUp;
 
-	void Start () {		
-		Destroy (this.gameObject, time);
-		bombRange = PlayerBehaviour.bombPower;
+	void Start () {				
+		bombRange = PlayerBehaviour.bombPower;        
 	}
 
-	void OnDestroy(){
-		//Instancia a explosão com os parâmetros de limite para cada lado
-		InstantiateExplosion ((int)explosionRangeUp,(int)explosionRangeDown,(int)explosionRangeLeft,(int)explosionRangeRight);
+	void Destroy(){
+        if (time <= 0) {
+            Destroy(this.gameObject);
+
+            //Instancia a explosão com os parâmetros de limite para cada lado
+            InstantiateExplosion((int)explosionRangeUp, (int)explosionRangeDown, (int)explosionRangeLeft, (int)explosionRangeRight);
+
+        }
 	}
 
 	void FixedUpdate () {			
@@ -69,7 +73,11 @@ public class BombBehaviour : MonoBehaviour {
 			explosionRangeRight = bombRange;
         }
 	}
-
+    void Update()
+    {
+        time -= Time.deltaTime;
+        Destroy();
+    }
     void InstantiateExplosion(int up, int down, int left, int right) {
 
         Vector3 posUp = new Vector3(transform.position.x, transform.position.y + up, transform.position.z); //Declara a posição de cada "ponta" da explosão

@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class BombEaterBehaviour : MonoBehaviour
 {
-
     Vector2 pos;
     public float speed = 1;
     public LayerMask checkOnlyThis;
-    private int randomIndex, previousIndex;
+    private int randomIndex, previousIndex, bombIndex;
     Vector2[] rayDirection = new Vector2[4];
-    private Vector2 facingRayInitial;
-    private bool orientation, isValid, bombClose;
+    private Vector2 facingRayInitial, nextPosition;
+    private bool orientation, isValid, bombClose;   
 
     public static int life;
     public static float time;
@@ -38,15 +37,27 @@ public class BombEaterBehaviour : MonoBehaviour
     }
 
     void FixedUpdate()
-    {
+    {       
         GotHit();
 
         if (life <= 0) {           
             Destroy(gameObject);
         }
-        if (hittable && !bombClose)
-        {
 
+         if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
+                || transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1)
+         {
+            bombClose = false;         
+            pos = transform.position;           
+         }
+       
+
+        if (hittable && bombClose)
+        {            
+            Move(randomIndex);  
+        }
+        else if (hittable && !bombClose)
+        {            
             Move(randomIndex);
             facingRayInitial = new Vector2(transform.position.x, transform.position.y - 0.3f);
             RaycastHit2D facing = Physics2D.Raycast(facingRayInitial, rayDirection[randomIndex], 0.3f, checkOnlyThis);
@@ -71,20 +82,21 @@ public class BombEaterBehaviour : MonoBehaviour
 
            if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
                || transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1)
-           {                 
+           {
+                if ((transform.position.x / Mathf.Round(transform.position.x) != 1 || transform.position.y / Mathf.Round(transform.position.y) != 1))
+                {
+                    transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), Mathf.Round(transform.position.z));
+                }               
                 ChangeDirection();
                 pos = transform.position;
-           }
-        }
-        else if (bombClose)
-        {
+                TestBomb();
+            }
+        }       
+    }    
 
-        } 
-    }
-
-    void ChangeDirection()
-    {
-        previousIndex = randomIndex;
+    void ChangeDirection() //Função para mudar a direção do inimigo
+    {       
+        previousIndex = randomIndex;       
         if (orientation == true)
         {
             randomIndex = Random.Range(0, 2);
@@ -93,15 +105,14 @@ public class BombEaterBehaviour : MonoBehaviour
         {
             randomIndex = Random.Range(2, 4);
         }
-        if (Raycasting(randomIndex) != null)
+        if (Raycasting(randomIndex, 1))
         {
             randomIndex = previousIndex;
         }
     } 
 
     void Move(int direction) //Função para mover o inimigo dependendo do raio escolhido
-    {
-        Vector2 nextPosition;
+    {        
         switch (direction)
         {
             case 0: //Up              
@@ -143,7 +154,7 @@ public class BombEaterBehaviour : MonoBehaviour
         {
             isValid = false;
             randomIndex = Random.Range(0, 4);
-            if (Raycasting(randomIndex) == null)
+            if (Raycasting(randomIndex, 1) == null)
             {
                 isValid = true;
             }
@@ -158,11 +169,40 @@ public class BombEaterBehaviour : MonoBehaviour
         }
     }
 
-    Collider2D Raycasting(int index) //Função para testar a direção aleatória do raio
+    void TestBomb() //Função para testar se há bomba perto
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDirection[index], 1f, checkOnlyThis);
+        for (int i = 0; i < 4; i++)
+        {
+            var rayCast = Raycasting(i, 5);
+            if (rayCast && rayCast.CompareTag("Bomba"))
+            {                
+                isValid = true;
+                bombClose = true;
+                randomIndex = i;
+                if (i == 0 || i == 1)
+                {
+                    orientation = true;                   
+                }
+                else
+                {
+                    orientation = false;                    
+                }
+                isValid = false;
+                return;
+            }
+            else
+            {
+                bombClose = false;
+            }         
+        }
+    }
+
+    Collider2D Raycasting(int index, float size) //Função para testar a direção aleatória do raio
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDirection[index], size, checkOnlyThis);
         return hit.collider;
     }
+
 
     void OnTriggerEnter2D(Collider2D other) //Função para matar o player
     {
@@ -170,6 +210,9 @@ public class BombEaterBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             PlayerBehaviour.live = false;
+        }
+        if (other.gameObject.CompareTag("Bomba")) {
+            Destroy(other.gameObject);            
         }
     }
 
