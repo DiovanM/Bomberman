@@ -14,7 +14,7 @@ public class BombEaterBehaviour : MonoBehaviour
 
     public static int life;
     public static float time;
-    public static bool hittable = true; //Variável para saber se o inimigo está na animação de dano ou não
+    public bool hittable = true; //Variável para saber se o inimigo está na animação de dano ou não
     public static Rigidbody2D rig;
 
     void Start()
@@ -47,9 +47,12 @@ public class BombEaterBehaviour : MonoBehaviour
          if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
                 || transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1)
          {
-            bombClose = false;         
-            pos = transform.position;           
-         }
+            bombClose = false;
+            if ((transform.position.x / Mathf.Round(transform.position.x) != 1 || transform.position.y / Mathf.Round(transform.position.y) != 1))
+            {
+                transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), Mathf.Round(transform.position.z));
+            }
+        }
        
 
         if (hittable && bombClose)
@@ -60,8 +63,9 @@ public class BombEaterBehaviour : MonoBehaviour
         {            
             Move(randomIndex);
             facingRayInitial = new Vector2(transform.position.x, transform.position.y - 0.3f);
-            RaycastHit2D facing = Physics2D.Raycast(facingRayInitial, rayDirection[randomIndex], 0.3f, checkOnlyThis);
-            if (facing.collider != null)
+            RaycastHit2D facing = Physics2D.Raycast(facingRayInitial, rayDirection[randomIndex], 0.2f, checkOnlyThis);          
+
+            if (facing.collider != null && !facing.collider.CompareTag("Bomba"))
             {
                 switch (randomIndex)
                 {
@@ -80,13 +84,9 @@ public class BombEaterBehaviour : MonoBehaviour
                 }
             }
 
-           if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
-               || transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1)
-           {
-                if ((transform.position.x / Mathf.Round(transform.position.x) != 1 || transform.position.y / Mathf.Round(transform.position.y) != 1))
-                {
-                    transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), Mathf.Round(transform.position.z));
-                }               
+            if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
+               || transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1)           
+            {           
                 ChangeDirection();
                 pos = transform.position;
                 TestBomb();
@@ -200,10 +200,10 @@ public class BombEaterBehaviour : MonoBehaviour
     Collider2D Raycasting(int index, float size) //Função para testar a direção aleatória do raio
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDirection[index], size, checkOnlyThis);
+        Debug.DrawRay(transform.position, rayDirection[index], Color.blue);
         return hit.collider;
     }
-
-
+    
     void OnTriggerEnter2D(Collider2D other) //Função para matar o player
     {
 
@@ -213,6 +213,10 @@ public class BombEaterBehaviour : MonoBehaviour
         }
         if (other.gameObject.CompareTag("Bomba")) {
             Destroy(other.gameObject);            
+        }
+        if (other.gameObject.CompareTag("Explosion"))
+        {
+            hittable = false;
         }
     }
 
