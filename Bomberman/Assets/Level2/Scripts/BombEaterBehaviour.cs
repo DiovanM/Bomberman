@@ -12,14 +12,13 @@ public class BombEaterBehaviour : MonoBehaviour
     private Vector2 facingRayInitial, nextPosition;
     private bool orientation, isValid, bombClose;   
 
-    public static int life;
+    public int life = 3;
     public static float time;
     public bool hittable = true; //Variável para saber se o inimigo está na animação de dano ou não
     public static Rigidbody2D rig;
 
     void Start()
-    {
-        life = 3;
+    {        
         rig = GetComponent<Rigidbody2D>();
 
         rayDirection[0] = new Vector2(0, 1);
@@ -30,17 +29,10 @@ public class BombEaterBehaviour : MonoBehaviour
         pos = transform.position;
         InitialDirection();
     }
-    void OnDestroy()
-    {
-        MenusManager.enemyAmount -= 1;
-    }
+   
     void FixedUpdate()
     {       
         GotHit();
-
-        if (life <= 0) {           
-            Destroy(gameObject);
-        }
 
         if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
                 || transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1)
@@ -83,7 +75,11 @@ public class BombEaterBehaviour : MonoBehaviour
 
             if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
                || transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1)   //A cada fixed update, verifica se a posição mudou em 1 e então escolhe uma nova direção        
-            {           
+            {
+                if ((transform.position.x / Mathf.Round(transform.position.x) != 1 || transform.position.y / Mathf.Round(transform.position.y) != 1))
+                {
+                    transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), Mathf.Round(transform.position.z));
+                }
                 ChangeDirection();
                 pos = transform.position;
                 TestBomb();
@@ -223,7 +219,12 @@ public class BombEaterBehaviour : MonoBehaviour
             if (time >= 0.7)
             {               
                 GetComponent<Rigidbody2D>().isKinematic = false;
-                life -= 1;               
+                life -= 1;
+                if (life <= 0)
+                {
+                    Destroy(gameObject);                   
+                    MenusManager.enemyAmount -= 1;
+                }
                 hittable = true;
                 time = 0;
                 GetComponent<Animator>().SetBool("isHit", false);

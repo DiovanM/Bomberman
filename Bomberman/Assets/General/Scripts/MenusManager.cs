@@ -16,12 +16,11 @@ public class MenusManager : MonoBehaviour {
 		isPauseable = true;
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
         bombEater = GameObject.FindGameObjectsWithTag("BombEater");
-        enemyAmount = bombEater.Length + enemies.Length;       
-	}
+        enemyAmount = bombEater.Length + enemies.Length;
+    }
 
-	void FixedUpdate(){		
-		
-		if (enemyAmount == 0) {
+	void FixedUpdate(){        
+        if (enemyAmount == 0) {
 			levelMusic.Stop ();
 			VictoryMusic.Play ();
 			isPauseable = false;

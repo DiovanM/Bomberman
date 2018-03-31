@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 58538664761670548}
   - component: {fileID: 114951383385573594}
   m_Layer: 0
-  m_Name: Enemy
+  m_Name: BombEater
   m_TagString: BombEater
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,10 +107,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19e60650f9294e641bb43d7d94531605, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   checkOnlyThis:
     serializedVersion: 2
     m_Bits: 256
+  life: 2
+  hittable: 1
 --- !u!212 &212077936038133504
 SpriteRenderer:
   m_ObjectHideFlags: 1
