@@ -30,12 +30,10 @@ public class BombEaterBehaviour : MonoBehaviour
         pos = transform.position;
         InitialDirection();
     }
-
     void OnDestroy()
     {
         MenusManager.enemyAmount -= 1;
     }
-
     void FixedUpdate()
     {       
         GotHit();
@@ -44,16 +42,15 @@ public class BombEaterBehaviour : MonoBehaviour
             Destroy(gameObject);
         }
 
-         if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
+        if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
                 || transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1)
          {
             bombClose = false;
-            if ((transform.position.x / Mathf.Round(transform.position.x) != 1 || transform.position.y / Mathf.Round(transform.position.y) != 1))
+           if ((transform.position.x / Mathf.Round(transform.position.x) != 1 || transform.position.y / Mathf.Round(transform.position.y) != 1))
             {
                 transform.position = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y), Mathf.Round(transform.position.z));
             }
-        }
-       
+        }       
 
         if (hittable && bombClose)
         {            
@@ -85,7 +82,7 @@ public class BombEaterBehaviour : MonoBehaviour
             }
 
             if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
-               || transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1)           
+               || transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1)   //A cada fixed update, verifica se a posição mudou em 1 e então escolhe uma nova direção        
             {           
                 ChangeDirection();
                 pos = transform.position;
@@ -146,8 +143,7 @@ public class BombEaterBehaviour : MonoBehaviour
                 orientation = true;
                 break;
         }
-    }   
-
+    }  
     void InitialDirection() //Função para escolher a direção inicial
     {
         do
@@ -168,7 +164,6 @@ public class BombEaterBehaviour : MonoBehaviour
             orientation = false;
         }
     }
-
     void TestBomb() //Função para testar se há bomba perto
     {
         for (int i = 0; i < 4; i++)
@@ -199,11 +194,9 @@ public class BombEaterBehaviour : MonoBehaviour
 
     Collider2D Raycasting(int index, float size) //Função para testar a direção aleatória do raio
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDirection[index], size, checkOnlyThis);
-        Debug.DrawRay(transform.position, rayDirection[index], Color.blue);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, rayDirection[index], size, checkOnlyThis);        
         return hit.collider;
-    }
-    
+    }    
     void OnTriggerEnter2D(Collider2D other) //Função para matar o player
     {
 

@@ -291,6 +291,7 @@
     <Compile Include="Assets\General\Scripts\BombBehaviour.cs" />
     <Compile Include="Assets\General\Scripts\BombDrop.cs" />
     <Compile Include="Assets\General\Scripts\ButtomFunctions.cs" />
+    <Compile Include="Assets\General\Scripts\DestroyObject.cs" />
     <Compile Include="Assets\General\Scripts\Explosion.cs" />
     <Compile Include="Assets\General\Scripts\InstantiatePowerUp.cs" />
     <Compile Include="Assets\General\Scripts\MenusManager.cs" />

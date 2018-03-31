@@ -15,9 +15,4 @@ public class Explosion : MonoBehaviour {
 			PlayerBehaviour.live = false;
 		}        
 	}
-
-	public void DestroyMe(){ //Utilizado no animation event ao final da animação
-		Destroy (gameObject);
-	}    
-
 }

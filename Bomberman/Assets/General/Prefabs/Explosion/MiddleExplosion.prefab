@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 95330343860764450}
   - component: {fileID: 61812153265586780}
   - component: {fileID: 114892340586663334}
+  - component: {fileID: 114152144530701588}
   m_Layer: 0
   m_Name: MiddleExplosion
   m_TagString: Explosion
@@ -85,6 +86,17 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114152144530701588
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1904028470999156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c4931b3325c95489902c58a9f2ad55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114892340586663334
 MonoBehaviour:
   m_ObjectHideFlags: 1

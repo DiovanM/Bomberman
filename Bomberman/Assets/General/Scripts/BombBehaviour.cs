@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BombBehaviour : MonoBehaviour {
 
-	public float time = 3;
 	private int bombRange;
+    private bool exploded = false;
 	public float explosionRangeUp, explosionRangeDown, explosionRangeLeft, explosionRangeRight;
 	public LayerMask ExplosionStop;
 	[Header("Explosion Prefabs")]
@@ -21,13 +21,16 @@ public class BombBehaviour : MonoBehaviour {
 		bombRange = PlayerBehaviour.bombPower;        
 	}
 
-	void Destroy(){
-        if (time <= 0) {
-            Destroy(this.gameObject);
+    public void Exploded() {
+        exploded = true;
+    } 
 
-            //Instancia a explosão com os parâmetros de limite para cada lado
-            InstantiateExplosion((int)explosionRangeUp, (int)explosionRangeDown, (int)explosionRangeLeft, (int)explosionRangeRight);
-
+	void OnDestroy(){
+        { if (exploded)
+            {
+                //Instancia a explosão com os parâmetros de limite para cada lado
+                InstantiateExplosion((int)explosionRangeUp, (int)explosionRangeDown, (int)explosionRangeLeft, (int)explosionRangeRight);
+            }
         }
 	}
 
@@ -73,11 +76,7 @@ public class BombBehaviour : MonoBehaviour {
 			explosionRangeRight = bombRange;
         }
 	}
-    void Update()
-    {
-        time -= Time.deltaTime;
-        Destroy();
-    }
+    
     void InstantiateExplosion(int up, int down, int left, int right) {
 
         Vector3 posUp = new Vector3(transform.position.x, transform.position.y + up, transform.position.z); //Declara a posição de cada "ponta" da explosão

@@ -21,11 +21,9 @@ public class FirstEnemyBehaviour : MonoBehaviour {
 		pos = transform.position;
 		InitialDirection ();
 	}
-
 	void OnDestroy(){
 		MenusManager.enemyAmount -= 1;
 	}
-
 	void FixedUpdate()
 	{		
 		Move(randomIndex);
@@ -66,7 +64,6 @@ public class FirstEnemyBehaviour : MonoBehaviour {
 			randomIndex = previousIndex;
 		} 
 	}
-
 	void Move(int direction)
 	{
 		Vector2 nextPosition;
@@ -104,12 +101,10 @@ public class FirstEnemyBehaviour : MonoBehaviour {
 			break;
 		}
 	}
-
 	Collider2D Raycasting(int index){
 		RaycastHit2D hit = Physics2D.Raycast (transform.position, rayDirection[index], 1f, checkOnlyThis);
 		return hit.collider;
 	}
-
 	void InitialDirection(){
 		do {
 			isValid = false;
@@ -124,7 +119,6 @@ public class FirstEnemyBehaviour : MonoBehaviour {
 			orientation = false;
 		}
 	}
-
 	void OnTriggerEnter2D(Collider2D other){				
 
 		if (other.gameObject.CompareTag ("Player")) {

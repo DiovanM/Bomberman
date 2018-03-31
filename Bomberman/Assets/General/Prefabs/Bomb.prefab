@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212915995931275264}
   - component: {fileID: 95914793261604998}
   - component: {fileID: 61411785818888760}
+  - component: {fileID: 114901508353696942}
   - component: {fileID: 114044208000944436}
   - component: {fileID: 50160200232897440}
   m_Layer: 8
@@ -117,7 +118,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eaa662654987044aa02a91c76d4946e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  time: 1.5
   explosionRangeUp: 0
   explosionRangeDown: 0
   explosionRangeLeft: 0
@@ -132,6 +132,17 @@ MonoBehaviour:
   Vertical: {fileID: 1628977665848558, guid: b5f8c20ae58d30841a253939b700d0ac, type: 2}
   VertDown: {fileID: 1103626924720044, guid: 6bd89463debb7424b9434b96f74eedaa, type: 2}
   VertUp: {fileID: 1245098587330378, guid: c4710b643537e974c8593964f7be2146, type: 2}
+--- !u!114 &114901508353696942
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1490138240745876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47c4931b3325c95489902c58a9f2ad55, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212915995931275264
 SpriteRenderer:
   m_ObjectHideFlags: 1
