@@ -12080,11 +12080,6 @@ Prefab:
       propertyPath: m_Name
       value: Boss
       objectReference: {fileID: 0}
-    - target: {fileID: 114677141243641524, guid: c9f7da1ae03d3a24691a03c913181b17,
-        type: 2}
-      propertyPath: life
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9f7da1ae03d3a24691a03c913181b17, type: 2}
   m_IsPrefabParent: 0

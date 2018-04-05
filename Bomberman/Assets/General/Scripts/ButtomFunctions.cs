@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtomFunctions : MonoBehaviour {
 
-    public GameObject startButton, levelOne, levelTwo;
+    public GameObject startButton, levelOne, levelTwo, boss;
 
 	public void Load(int sceneNumber){
 		Time.timeScale = 1;
@@ -20,6 +20,7 @@ public class ButtomFunctions : MonoBehaviour {
         startButton.SetActive(false);
         levelOne.SetActive(true);
         levelTwo.SetActive(true);
+        boss.SetActive(true);
     }
 
 }

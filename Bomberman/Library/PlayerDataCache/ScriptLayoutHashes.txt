@@ -3,6 +3,7 @@ SceneListBegin?
 Assets/General/Scenes/MainMenu.unity
 Assets/General/Scenes/Level1.unity
 Assets/General/Scenes/Level2.unity
+Assets/General/Scenes/Boss.unity
 SceneListEnd?
 a97cb76daabbe7a82c61bc2d2dc40040 Assembly-CSharp.dll:.BombEaterBehaviour
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
@@ -17,6 +18,7 @@ ff05dcdf90651c3d98a9cad3df5e471e UnityEngine.Timeline.dll:UnityEngine.Timeline.C
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.GroupTrack
 31aaf521b3ef8699466676591ea0efd4 UnityEngine.Timeline.dll:UnityEngine.Timeline.PlayableTrack
 df374c01140c2d578bf70cbd60073d1d UnityEngine.Timeline.dll:UnityEngine.Timeline.TimelineAsset
+70618b96f73d421a95ee9d7e7872f2ed Assembly-CSharp.dll:.BossBehaviour
 a35dc9cca2faebc5f5f1aeb9e8e47bbe UnityEngine.UI.dll:UnityEngine.UI.AspectRatioFitter
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.UI.dll:UnityEngine.EventSystems.BaseInput
 49cd62a578efc0a599b810a2b66cd49c UnityEngine.UI.dll:UnityEngine.UI.Button
@@ -150,5 +152,5 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-0483c2984390266e11473592ff35a381 Assembly-CSharp.dll:.ButtomFunctions
+5c00c6ae87f4454d60f4293a1d3e2059 Assembly-CSharp.dll:.ButtomFunctions
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.Explosion
