@@ -161,6 +161,7 @@ public class BombEaterBehaviour : MonoBehaviour
                 isValid = true;
             }
         } while (isValid == false);
+
         if (randomIndex == 0 || randomIndex == 1) 
         {
             orientation = true;

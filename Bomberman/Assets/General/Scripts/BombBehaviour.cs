@@ -129,7 +129,7 @@ public class BombBehaviour : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     { // Verifica quando o Player sai de cima da bomba
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Boss"))
         {
             this.gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
         }

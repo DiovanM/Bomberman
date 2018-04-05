@@ -15,10 +15,16 @@ public class BossBehaviour : MonoBehaviour {
     private bool orientation, isValid, hittable, willChangeDirection;
     public static float time;
 
+
+    private int bombPutCounterForMovement = 0;
+    private bool playerClose = false;
+    private bool putBomb = false;
+
     public GameObject bombPrefab;
 
     void Start()
     {
+        isValid = false;
         speed = BossSpeed;
         hittable = true;        
         rayDirection[0] = new Vector2(0, 1);
@@ -34,7 +40,21 @@ public class BossBehaviour : MonoBehaviour {
     }
     void FixedUpdate()
     {
-        #region Change boss layer
+        if (speed == 0)
+        {
+            GetComponent<Animator>().SetBool("Stopped", true);
+            time += Time.deltaTime;
+            if (time >= 1.2)
+            {
+                putBomb = false;
+                hittable = true;
+                time = 0;
+                speed = BossSpeed;
+                GetComponent<Animator>().SetBool("Stopped", false);
+            }
+        }
+
+        #region Change boss layer       
 
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         if (playerPosition.y > transform.position.y)
@@ -51,13 +71,19 @@ public class BossBehaviour : MonoBehaviour {
         if (!hittable) { //Verify if hit and change the life status
             GotHit();
         }
-
+        
         Move(randomIndex);
+                     
         
         if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
            || transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1)
         {
-            if (Raycasting(randomIndex, 0) != null)
+            if (putBomb)
+            {
+                speed = 0;
+            }
+
+            if (Raycasting(randomIndex, 1f, 1) != null)
             {
                 switch (randomIndex)
                 {
@@ -75,10 +101,57 @@ public class BossBehaviour : MonoBehaviour {
                         break;
                 }
             }
-        
-            ChangeDirection();
-            pos = transform.position;
+            
+            if (Raycasting(randomIndex, 1f, 2)){
+                bombDrop();
+                playerClose = true;
+            }
 
+            if (!playerClose)
+            {
+                ChangeDirection();
+            }
+            else
+            {
+
+               
+                if (bombPutCounterForMovement == 0)
+                {
+                    switch (randomIndex)
+                    {
+                        case 0:
+                            randomIndex = 1;
+                            break;
+                        case 1:
+                            randomIndex = 0;
+                            break;
+                        case 2:
+                            randomIndex = 3;
+                            break;
+                        case 3:
+                            randomIndex = 2;
+                            break;
+                    }
+                    bombPutCounterForMovement++;
+                }
+                else
+                {
+                    do
+                    {                        
+                        randomIndex = Random.Range(0, 4);
+                        if (Raycasting(randomIndex, 2f, 1) == null)
+                        {
+                            isValid = true;                            
+                        }
+                    } while (!isValid);
+                    bombPutCounterForMovement = 0;
+                    isValid = false;
+                    putBomb = true;
+                    playerClose = false;
+                }
+
+            }
+            pos = transform.position;
         }
     }   
 
@@ -86,7 +159,7 @@ public class BossBehaviour : MonoBehaviour {
     {
         previousIndex = randomIndex;
        
-        if (Raycasting(randomIndex, 1) == null)
+        if (Raycasting(randomIndex, 11f, 2) == null)
         {
             if (orientation)
             {
@@ -110,7 +183,7 @@ public class BossBehaviour : MonoBehaviour {
                     randomIndex = 2;
                 }               
             }
-            if (Raycasting(randomIndex, 0) != null)
+            if (Raycasting(randomIndex, 1f, 1) != null)
             {
                 randomIndex = previousIndex;
             }
@@ -154,15 +227,15 @@ public class BossBehaviour : MonoBehaviour {
         }
     }
 
-    Collider2D Raycasting(int index, int test)
+    Collider2D Raycasting(int index, float distance, int layer)
     {
         RaycastHit2D hit = new RaycastHit2D();
-        if (test == 0)
+        if (layer == 1)
         {
-            hit = Physics2D.Raycast(transform.position, rayDirection[index], 1f, checkOnlyThis);            
+            hit = Physics2D.Raycast(transform.position, rayDirection[index], distance, checkOnlyThis);            
         } else 
         {
-            hit = Physics2D.Raycast(transform.position, rayDirection[index], 11f, playerLayer);           
+            hit = Physics2D.Raycast(transform.position, rayDirection[index], distance, playerLayer);           
         }
 
         return hit.collider;
@@ -219,6 +292,7 @@ public class BossBehaviour : MonoBehaviour {
         if (life <= 0)
         {
             speed = 0;
+            GetComponent<Animator>().SetBool("Stopped", false);
             GetComponent<Animator>().SetBool("Death", true);
         }
         else
@@ -232,9 +306,16 @@ public class BossBehaviour : MonoBehaviour {
                 hittable = true;
                 time = 0;
                 GetComponent<Animator>().SetBool("isHit", false);
+                GetComponent<Animator>().SetBool("Stopped", false);
                 speed = BossSpeed;
             }
         }
     }
-
+    void bombDrop()
+    {
+        Vector2 pos = transform.position;
+        pos.x = (Mathf.Round(pos.x));
+        pos.y = (Mathf.Round(pos.y));
+        Instantiate(bombPrefab, pos, Quaternion.identity);
+    }
 }
