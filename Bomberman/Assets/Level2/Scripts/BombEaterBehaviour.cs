@@ -9,7 +9,7 @@ public class BombEaterBehaviour : MonoBehaviour
     public LayerMask checkOnlyThis;
     private int randomIndex, previousIndex, bombIndex;
     Vector2[] rayDirection = new Vector2[4];
-    private Vector2 facingRayInitial, nextPosition;
+    private Vector2 facingRayInitial, nextPosition, playerPosition;
     private bool orientation, isValid, bombClose;   
 
     public int life = 3;
@@ -33,6 +33,16 @@ public class BombEaterBehaviour : MonoBehaviour
     void FixedUpdate()
     {       
         GotHit();
+
+        playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        if (playerPosition.y > transform.position.y)
+        {
+            GetComponent<SpriteRenderer>().sortingOrder = 6;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sortingOrder = 3;
+        }
 
         if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
                 || transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1)

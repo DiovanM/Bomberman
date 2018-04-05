@@ -9,7 +9,7 @@ public class FirstEnemyBehaviour : MonoBehaviour {
 	public LayerMask checkOnlyThis;
 	private int randomIndex, previousIndex;
 	Vector2[] rayDirection = new Vector2[4];
-	private Vector2 facingRayInitial;
+	private Vector2 facingRayInitial, playerPosition;
 	private bool orientation, isValid;
 
 	void Start()
@@ -25,30 +25,41 @@ public class FirstEnemyBehaviour : MonoBehaviour {
 		MenusManager.enemyAmount -= 1;
 	}
 	void FixedUpdate()
-	{		
-		Move(randomIndex);
-		facingRayInitial = new Vector2(transform.position.x,transform.position.y-0.3f);
-		RaycastHit2D facing = Physics2D.Raycast (facingRayInitial, rayDirection[randomIndex], 0.3f, checkOnlyThis);
-		if (facing.collider != null) {
-			switch (randomIndex) {
-			case 0:
-				randomIndex = 1;
-				break;
-			case 1:
-				randomIndex = 0;
-				break;
-			case 2:
-				randomIndex = 3;
-				break;
-			case 3:
-				randomIndex = 2;
-				break;
-			}
-		}
+	{
+        playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+        if (playerPosition.y > transform.position.y)
+        {
+            GetComponent<SpriteRenderer>().sortingOrder = 6;
+        }
+        else
+        {
+            GetComponent<SpriteRenderer>().sortingOrder = 3;
+        }
+
+
+        Move(randomIndex);		
 
 		if (transform.position.x >= pos.x + 1 || transform.position.y >= pos.y + 1
-			|| transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1) {		
-			ChangeDirection();
+			|| transform.position.x <= pos.x - 1 || transform.position.y <= pos.y - 1) {
+            if (Raycasting(randomIndex) != null)
+            {
+                switch (randomIndex)
+                {
+                    case 0:
+                        randomIndex = 1;
+                        break;
+                    case 1:
+                        randomIndex = 0;
+                        break;
+                    case 2:
+                        randomIndex = 3;
+                        break;
+                    case 3:
+                        randomIndex = 2;
+                        break;
+                }
+            }
+            ChangeDirection();
 			pos = transform.position;
 		}   
 	}   

@@ -12046,11 +12046,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4209512512795442, guid: c9f7da1ae03d3a24691a03c913181b17, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4209512512795442, guid: c9f7da1ae03d3a24691a03c913181b17, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.7
+      value: 2.3
       objectReference: {fileID: 0}
     - target: {fileID: 4209512512795442, guid: c9f7da1ae03d3a24691a03c913181b17, type: 2}
       propertyPath: m_LocalPosition.z
@@ -12079,6 +12079,17 @@ Prefab:
     - target: {fileID: 1543275552910318, guid: c9f7da1ae03d3a24691a03c913181b17, type: 2}
       propertyPath: m_Name
       value: Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 114677141243641524, guid: c9f7da1ae03d3a24691a03c913181b17,
+        type: 2}
+      propertyPath: bombPrefab
+      value: 
+      objectReference: {fileID: 1490138240745876, guid: 0cf8162fe7864dc44a0d17884a4e27b2,
+        type: 2}
+    - target: {fileID: 114677141243641524, guid: c9f7da1ae03d3a24691a03c913181b17,
+        type: 2}
+      propertyPath: playerLayer.m_Bits
+      value: 512
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c9f7da1ae03d3a24691a03c913181b17, type: 2}
@@ -25013,7 +25024,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4621248545020724, guid: f19bfccc29c86174988b437d6501aca6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1
+      value: -8
       objectReference: {fileID: 0}
     - target: {fileID: 4621248545020724, guid: f19bfccc29c86174988b437d6501aca6, type: 2}
       propertyPath: m_LocalPosition.y
@@ -25042,6 +25053,10 @@ Prefab:
     - target: {fileID: 4621248545020724, guid: f19bfccc29c86174988b437d6501aca6, type: 2}
       propertyPath: m_RootOrder
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1792861180619490, guid: f19bfccc29c86174988b437d6501aca6, type: 2}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f19bfccc29c86174988b437d6501aca6, type: 2}

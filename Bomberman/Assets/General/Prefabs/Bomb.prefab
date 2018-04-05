@@ -118,10 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7eaa662654987044aa02a91c76d4946e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionRangeUp: 0
-  explosionRangeDown: 0
-  explosionRangeLeft: 0
-  explosionRangeRight: 0
+  explosionRangeUp: 1
+  explosionRangeDown: 1
+  explosionRangeLeft: 1
+  explosionRangeRight: 1
   ExplosionStop:
     serializedVersion: 2
     m_Bits: 256
