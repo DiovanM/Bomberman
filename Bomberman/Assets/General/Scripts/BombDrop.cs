@@ -16,7 +16,7 @@ public class BombDrop : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D other){ // Verifica quando o Player está encima da bomba
-		if (other.CompareTag ("Bomba")) {
+		if (other.CompareTag ("Bomba") || other.CompareTag("BossBomb")) {
 			canDrop = false;
 		}
 	}
