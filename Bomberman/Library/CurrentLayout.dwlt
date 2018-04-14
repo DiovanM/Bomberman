@@ -70,7 +70,7 @@ MonoBehaviour:
   m_MinSize: {x: 336, y: 271}
   m_MaxSize: {x: 14006, y: 10021}
   vertical: 0
-  controlID: 72
+  controlID: 98
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -92,7 +92,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 742}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &5
 MonoBehaviour:
@@ -408,24 +408,24 @@ MonoBehaviour:
   m_LastProjectPath: D:\Git\Bomberman\Bomberman
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 26}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: a8290000
     m_LastClickedID: 10664
     m_ExpandedIDs: 000000008e270000522900005a290000722900007c290000802900002c2a00003a2a0000a42c000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Sprites
+      m_OriginalName: Sprites
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 10796
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 2}
     m_SearchString: 
@@ -466,7 +466,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
+    m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: a82a0000cc3100005226000074260000a285ffff502700003c21ffff7a260000d2c800001c260000b83200008a290000ee28000054350000de270000442a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -522,14 +522,14 @@ MonoBehaviour:
     height: 225
   m_PersistentViewDataDictionary: {fileID: 0}
   m_SceneLighting: 1
-  lastFramingTime: 533.0262567302713
+  lastFramingTime: 162.92368324694735
   m_2DMode: 1
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -130.1341, y: 209.93222, z: -4.4258676}
+    m_Target: {x: -1.0625049, y: 1.9388562, z: -1.1171875}
     speed: 2
-    m_Value: {x: -130.1341, y: 209.93222, z: -4.4258676}
+    m_Value: {x: -1.0625049, y: 1.9388562, z: -1.1171875}
   m_RenderMode: 0
   m_ValidateTrueMetals: 0
   m_SceneViewState:
@@ -557,9 +557,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 838.665
+    m_Target: 17.521355
     speed: 2
-    m_Value: 838.665
+    m_Value: 17.521355
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1125,7 +1125,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: c2dbffffc0dcffff62e3ffffe8efffff32f6ffff36f6ffff9efbffff00000000
+    m_ExpandedIDs: 48bbfdff44bcfdff58bdfdffdec9fdff22d0fdff28d0fdffe8d5fdffe4d6fdfff8d7fdff7ee4fdffc2eafdffc8eafdfff6f3fdffe8f4fdff00f6fdff8a02feffd208feffdc08feff902afeffd8c0fffffcd1ffff90d9ffffc8f1ffff9efbffff000000002c4a00003a4c0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1144,7 +1144,7 @@ MonoBehaviour:
       m_ClientGUIView: {fileID: 12}
     m_SearchString: 
   m_ExpandedScenes:
-  - MainMenu
+  - Boss
   m_CurrenRootInstanceID: 0
   m_Locked: 0
   m_CurrentSortingName: TransformSorting
