@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class ButtomFunctions : MonoBehaviour {
 
-    public GameObject startButton, exitButton, scoreboardButton, returnMenu, levelOne, levelTwo, boss, scoreboard;
+    public GameObject startButton, exitButton, scoreboardButton, returnMenu, levelOne, levelTwo, boss, scoreboard, errorWindow;
 
 	public void Load(int sceneNumber){
 		Time.timeScale = 1;
@@ -22,6 +22,15 @@ public class ButtomFunctions : MonoBehaviour {
         exitButton.SetActive(false);
         scoreboardButton.SetActive(false);
         scoreboard.SetActive(true);
+        if (ScoreboardUpdate.NetworkError == false)
+        {
+            errorWindow.SetActive(false);
+        }
+    }
+
+    public void CloseErrorWindow()
+    {
+        errorWindow.SetActive(false);
     }
 
     public void Return()

@@ -475,6 +475,7 @@ GameObject:
   - component: {fileID: 59956779}
   - component: {fileID: 59956778}
   - component: {fileID: 59956783}
+  - component: {fileID: 59956780}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -496,6 +497,85 @@ Behaviour:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 59956777}
   m_Enabled: 1
+--- !u!114 &59956780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 59956777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7811cb5452da9e84ebf78ae618580119, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ServerIP: localhost:1337/
+  tableName: level
+  level1Names:
+  - {fileID: 1754039808}
+  - {fileID: 496147444}
+  - {fileID: 1851785256}
+  - {fileID: 89153378}
+  - {fileID: 2079432935}
+  - {fileID: 1709562172}
+  - {fileID: 696813745}
+  - {fileID: 1231883518}
+  - {fileID: 1177287263}
+  - {fileID: 1782541488}
+  level1Scores:
+  - {fileID: 1816269706}
+  - {fileID: 732492822}
+  - {fileID: 1121722710}
+  - {fileID: 1421474288}
+  - {fileID: 2068317596}
+  - {fileID: 388247344}
+  - {fileID: 1224545141}
+  - {fileID: 1219047335}
+  - {fileID: 928454814}
+  - {fileID: 1626141717}
+  level2Names:
+  - {fileID: 1184931341}
+  - {fileID: 597127637}
+  - {fileID: 660009853}
+  - {fileID: 325554697}
+  - {fileID: 1415456363}
+  - {fileID: 1484430563}
+  - {fileID: 743674490}
+  - {fileID: 1332047011}
+  - {fileID: 2057992437}
+  - {fileID: 488269935}
+  level2Scores:
+  - {fileID: 1449440399}
+  - {fileID: 1621580347}
+  - {fileID: 1654951774}
+  - {fileID: 612074458}
+  - {fileID: 1349815070}
+  - {fileID: 738983109}
+  - {fileID: 1053604483}
+  - {fileID: 95387150}
+  - {fileID: 1752663257}
+  - {fileID: 179348374}
+  level3Names:
+  - {fileID: 617190255}
+  - {fileID: 1463046447}
+  - {fileID: 1502108397}
+  - {fileID: 813964948}
+  - {fileID: 1571235879}
+  - {fileID: 250068577}
+  - {fileID: 198851788}
+  - {fileID: 1153653095}
+  - {fileID: 607013138}
+  - {fileID: 134389162}
+  level3Scores:
+  - {fileID: 562010917}
+  - {fileID: 1547114970}
+  - {fileID: 1237770080}
+  - {fileID: 721945534}
+  - {fileID: 465646547}
+  - {fileID: 1232181193}
+  - {fileID: 460506191}
+  - {fileID: 2009671362}
+  - {fileID: 697333419}
+  - {fileID: 1580998120}
 --- !u!20 &59956781
 Camera:
   m_ObjectHideFlags: 0
@@ -564,6 +644,7 @@ MonoBehaviour:
   levelTwo: {fileID: 80663023}
   boss: {fileID: 1397894788}
   scoreboard: {fileID: 102225811}
+  errorWindow: {fileID: 1715191942}
 --- !u!1 &61058103
 GameObject:
   m_ObjectHideFlags: 0
@@ -960,7 +1041,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &89153381
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1034,7 +1115,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &95387153
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1070,6 +1151,7 @@ RectTransform:
   - {fileID: 1399219805}
   - {fileID: 1061990121}
   - {fileID: 969823278}
+  - {fileID: 1715191943}
   m_Father: {fileID: 1677582020}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1426,7 +1508,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &134389165
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1877,7 +1959,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &179348377
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2020,7 +2102,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &198851791
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2349,7 +2431,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &250068580
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2640,7 +2722,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &325554700
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3350,7 +3432,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 19
+  m_Text: 
 --- !u!222 &388247347
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3774,7 +3856,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &460506194
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3848,7 +3930,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &465646550
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3991,7 +4073,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &488269938
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4065,7 +4147,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &496147447
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4532,7 +4614,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 35
+  m_Text: 
 --- !u!222 &562010920
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4885,7 +4967,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &597127640
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4959,7 +5041,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &607013141
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5033,7 +5115,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &612074461
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5107,7 +5189,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &617190258
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5476,7 +5558,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &660009856
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5582,18 +5664,18 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 12
+    m_FontSize: 13
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 1
-    m_MaxSize: 22
+    m_MaxSize: 29
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Return
+  m_Text: Back
 --- !u!222 &683807929
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5736,7 +5818,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &696813748
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5810,7 +5892,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &697333422
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5958,7 +6040,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &721945537
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6032,7 +6114,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 32
+  m_Text: 
 --- !u!222 &732492825
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6106,7 +6188,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 19
+  m_Text: 
 --- !u!222 &738983112
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6180,7 +6262,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &743674493
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6261,6 +6343,128 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 751326503}
+--- !u!1 &768253693
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 768253694}
+  - component: {fileID: 768253697}
+  - component: {fileID: 768253696}
+  - component: {fileID: 768253695}
+  m_Layer: 5
+  m_Name: Button
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &768253694
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 768253693}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2079241553}
+  m_Father: {fileID: 1715191943}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -6.6}
+  m_SizeDelta: {x: 20.82, y: 15.87}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &768253695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 768253693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 768253696}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 59956783}
+        m_MethodName: CloseErrorWindow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!114 &768253696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 768253693}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &768253697
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 768253693}
 --- !u!1 &795679006
 GameObject:
   m_ObjectHideFlags: 0
@@ -6397,7 +6601,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &813964951
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -7410,7 +7614,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &928454817
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8471,7 +8675,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &1053604486
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8970,7 +9174,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 21
+  m_Text: 
 --- !u!222 &1121722713
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9250,7 +9454,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &1153653098
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9467,7 +9671,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &1177287266
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9541,7 +9745,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &1184931344
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9939,7 +10143,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &1219047338
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10087,7 +10291,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &1224545144
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10161,7 +10365,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &1231883521
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10235,7 +10439,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 19
+  m_Text: 
 --- !u!222 &1232181196
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10446,7 +10650,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 21
+  m_Text: 
 --- !u!222 &1237770083
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11097,7 +11301,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &1332047014
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11378,7 +11582,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &1349815073
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12002,7 +12206,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &1415456366
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12076,7 +12280,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &1421474291
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12288,7 +12492,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 35
+  m_Text: 
 --- !u!222 &1449440402
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12574,7 +12778,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &1463046450
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12860,7 +13064,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &1484430566
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13293,7 +13497,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &1502108400
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13696,7 +13900,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 32
+  m_Text: 
 --- !u!222 &1547114973
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13839,7 +14043,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &1571235882
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -13982,7 +14186,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &1580998123
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14263,7 +14467,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 32
+  m_Text: 
 --- !u!222 &1621580350
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14337,7 +14541,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &1626141720
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -14559,7 +14763,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 21
+  m_Text: 
 --- !u!222 &1654951777
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15086,13 +15290,83 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &1709562175
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1709562172}
+--- !u!1 &1715191942
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1715191943}
+  - component: {fileID: 1715191945}
+  - component: {fileID: 1715191944}
+  m_Layer: 5
+  m_Name: Error Window
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1715191943
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715191942}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1760452304}
+  - {fileID: 768253694}
+  m_Father: {fileID: 102225812}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.20433335}
+  m_AnchorMax: {x: 1, y: 0.78000003}
+  m_AnchoredPosition: {x: 0, y: 0.5}
+  m_SizeDelta: {x: 51.6, y: -23.48}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1715191944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715191942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1715191945
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1715191942}
 --- !u!1 &1719833316
 GameObject:
   m_ObjectHideFlags: 0
@@ -15489,7 +15763,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &1752663260
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15563,13 +15837,87 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &1754039811
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1754039808}
+--- !u!1 &1760452303
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1760452304}
+  - component: {fileID: 1760452306}
+  - component: {fileID: 1760452305}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1760452304
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1760452303}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1715191943}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 5.6}
+  m_SizeDelta: {x: 147.76, y: 12.66}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1760452305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1760452303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 8
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 4
+    m_MaxSize: 33
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Couldn't retrieve data from server
+--- !u!222 &1760452306
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1760452303}
 --- !u!1 &1782541488
 GameObject:
   m_ObjectHideFlags: 0
@@ -15637,7 +15985,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &1782541491
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15849,7 +16197,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 35
+  m_Text: 
 --- !u!222 &1816269709
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -15992,7 +16340,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &1851785259
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -16712,7 +17060,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &2009671365
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17120,7 +17468,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &2057992440
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17263,13 +17611,87 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 20
+  m_Text: 
 --- !u!222 &2068317599
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2068317596}
+--- !u!1 &2079241552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2079241553}
+  - component: {fileID: 2079241555}
+  - component: {fileID: 2079241554}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2079241553
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2079241552}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 768253694}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2079241554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2079241552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 8
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 0
+    m_MaxSize: 41
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: OK
+--- !u!222 &2079241555
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2079241552}
 --- !u!1 &2079432935
 GameObject:
   m_ObjectHideFlags: 0
@@ -17337,7 +17759,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: AAA
+  m_Text: 
 --- !u!222 &2079432938
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17485,7 +17907,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Return
+  m_Text: Back
 --- !u!222 &2108516872
 CanvasRenderer:
   m_ObjectHideFlags: 0
