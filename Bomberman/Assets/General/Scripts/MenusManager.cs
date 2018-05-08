@@ -7,7 +7,8 @@ public class MenusManager : MonoBehaviour {
 
 	public static bool playerIsAlive, isPauseable;
 	public static int enemyAmount;
-	public GameObject stageClear, youDied, winLoseMenu, pauseMenu;
+    public int levelNumber;
+	public GameObject stageClear, youDied, winLoseMenu, pauseMenu, newScoreWindow;
 	public AudioSource levelMusic, VictoryMusic;
 	GameObject[] enemies, bombEater, boss;
 
@@ -22,12 +23,14 @@ public class MenusManager : MonoBehaviour {
 
 	void FixedUpdate(){        
         if (enemyAmount == 0) {
-			levelMusic.Stop ();
-			VictoryMusic.Play ();
-			isPauseable = false;
-			stageClear.SetActive (true);
+            Time.timeScale = 0;
+            levelMusic.Stop();
+            VictoryMusic.Play();            
+            newScoreWindow.SetActive(true);
+			isPauseable = false;           
+            stageClear.SetActive (true);
 			winLoseMenu.SetActive(true);
-			Time.timeScale = 0;
+			
 		}
 		if (playerIsAlive == false) {
 			levelMusic.Stop ();
@@ -36,7 +39,6 @@ public class MenusManager : MonoBehaviour {
 			winLoseMenu.SetActive(true);
 			Time.timeScale = 0;
 		}
-
 	}
 
 	void Update(){

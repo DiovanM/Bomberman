@@ -15,7 +15,7 @@ public class ScoreboardUpdate : MonoBehaviour {
     public GameObject[] level2Scores = new GameObject[10];
     public GameObject[] level3Names = new GameObject[10];
     public GameObject[] level3Scores = new GameObject[10];
-    private Scores[] levelScore = new Scores[3];
+    public static Scores[] levelScore = new Scores[3];
     
     void Start () {
         NetworkError = true;
@@ -25,8 +25,13 @@ public class ScoreboardUpdate : MonoBehaviour {
         StartCoroutine(GetLevel3Score(URL));
     }
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(transform.gameObject);
+    }
+
     //Cada IEnumerator faz o request dos dados de score para cada fase e os aloca na tabela
-   
+
     IEnumerator GetLevel1Score(string URL)
     {
         using (UnityWebRequest www = UnityWebRequest.Get(URL + '1'))
@@ -42,8 +47,9 @@ public class ScoreboardUpdate : MonoBehaviour {
                 levelScore[0] = JsonUtility.FromJson<Scores>(www.downloadHandler.text);
                 for (int i = 0; i < levelScore[0].resp.Length; i++)
                 {                    
-                    level1Names[i].GetComponent<Text>().text = levelScore[0].resp[i].nome;
+                    level1Names[i].GetComponent<Text>().text = levelScore[0].resp[i].nome;  
                     level1Scores[i].GetComponent<Text>().text = levelScore[0].resp[i].score;
+                   
                 }
             }
         }

@@ -299,10 +299,13 @@
     <Compile Include="Assets\General\Scripts\Explosion.cs" />
     <Compile Include="Assets\General\Scripts\InstantiatePowerUp.cs" />
     <Compile Include="Assets\General\Scripts\MenusManager.cs" />
+    <Compile Include="Assets\General\Scripts\NewHighscore.cs" />
+    <Compile Include="Assets\General\Scripts\NewScoreResponseWindowManager.cs" />
     <Compile Include="Assets\General\Scripts\PlayerBehaviour.cs" />
     <Compile Include="Assets\General\Scripts\PowerUpDrop.cs" />
     <Compile Include="Assets\General\Scripts\Score.cs" />
     <Compile Include="Assets\General\Scripts\ScoreboardUpdate.cs" />
+    <Compile Include="Assets\General\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\General\Scripts\Scores.cs" />
     <Compile Include="Assets\Level1\Scripts\FirstEnemyBehaviour.cs" />
     <Compile Include="Assets\Level2\Scripts\BombEaterBehaviour.cs" />
