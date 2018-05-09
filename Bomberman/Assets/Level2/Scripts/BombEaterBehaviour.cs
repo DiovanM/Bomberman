@@ -29,7 +29,10 @@ public class BombEaterBehaviour : MonoBehaviour
         pos = transform.position;
         InitialDirection();
     }
-   
+    void OnDestroy()
+    {
+        MenusManager.enemyAmount -= 1;
+    }
     void FixedUpdate()
     {       
         GotHit();
@@ -234,7 +237,7 @@ public class BombEaterBehaviour : MonoBehaviour
                 if (life <= 0)
                 {
                     Destroy(gameObject);                   
-                    MenusManager.enemyAmount -= 1;
+                   // MenusManager.enemyAmount -= 1;
                 }
                 hittable = true;
                 time = 0;

@@ -24,7 +24,7 @@ public class FirstEnemyBehaviour : MonoBehaviour {
 	void OnDestroy(){
 		MenusManager.enemyAmount -= 1;
 	}
-	void FixedUpdate()
+	void Update()
 	{
         playerPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
         if (playerPosition.y > transform.position.y)

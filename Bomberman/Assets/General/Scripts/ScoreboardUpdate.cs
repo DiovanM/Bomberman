@@ -23,12 +23,7 @@ public class ScoreboardUpdate : MonoBehaviour {
         StartCoroutine(GetLevel1Score(URL));
         StartCoroutine(GetLevel2Score(URL));
         StartCoroutine(GetLevel3Score(URL));
-    }
-
-    private void Awake()
-    {
-        DontDestroyOnLoad(transform.gameObject);
-    }
+    } 
 
     //Cada IEnumerator faz o request dos dados de score para cada fase e os aloca na tabela
 

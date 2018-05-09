@@ -7,9 +7,15 @@ public class ScoreManager : MonoBehaviour {
 
     public static float elapsedTime = 0;
     private float lastTime = 0;
-    public GameObject time, score;
-	
-	void Update () {
+    public GameObject time;
+
+    private void Start()
+    {
+        elapsedTime = 0;
+        lastTime = 0;
+    }
+
+    void Update () {
         if (MenusManager.playerIsAlive)
         {                               
             elapsedTime += Time.deltaTime;
