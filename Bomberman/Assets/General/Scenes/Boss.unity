@@ -6639,7 +6639,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f7eea50e69df22419e7a818fc3e0d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverip: localhost:1337/
+  serverip: http://diovanmarques.us-3.evennode.com/
   tableName: level3
   text: {fileID: 214896862}
   window: {fileID: 1690830317}
@@ -22916,14 +22916,14 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 1
     m_MinSize: 1
-    m_MaxSize: 116
+    m_MaxSize: 25
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Do you wish to save your score?
+  m_Text: 'Save your score:'
 --- !u!222 &1234564562
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -28890,7 +28890,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c03f01ad3b3b8b43af0306bd409af64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelNumber: 0
   stageClear: {fileID: 251077197}
   youDied: {fileID: 1075108284}
   winLoseMenu: {fileID: 630336517}

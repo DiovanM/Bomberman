@@ -7,7 +7,6 @@ public class MenusManager : MonoBehaviour {
 
 	public static bool playerIsAlive, isPauseable;
 	public static int enemyAmount;
-    public int levelNumber;
 	public GameObject stageClear, youDied, winLoseMenu, pauseMenu, newScoreWindow;
 	public AudioSource levelMusic, VictoryMusic;
 	GameObject[] enemies, bombEater, boss;
