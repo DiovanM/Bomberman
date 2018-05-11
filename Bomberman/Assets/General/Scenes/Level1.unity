@@ -4391,7 +4391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f7eea50e69df22419e7a818fc3e0d30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverip: http://diovanmarques.us-3.evennode.com/
+  serverip: https://bombermanscoremanager.herokuapp.com/
   tableName: level1
   text: {fileID: 1802051764}
   window: {fileID: 1339310361}
