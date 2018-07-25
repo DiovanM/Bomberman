@@ -7,7 +7,12 @@ public class ButtomFunctions : MonoBehaviour {
 
     public GameObject startButton, exitButton, scoreboardButton, returnMenu, levelOne, levelTwo, boss, scoreboard, errorWindow;
 
-	public void Load(int sceneNumber){
+    public void Start()
+    {
+        ScoreboardUpdate.onNetworkError += EnableNetworkErrorWindow;
+    }
+
+    public void Load(int sceneNumber){
 		Time.timeScale = 1;
 		SceneManager.LoadScene(sceneNumber);
 	}
@@ -21,11 +26,7 @@ public class ButtomFunctions : MonoBehaviour {
         startButton.SetActive(false);
         exitButton.SetActive(false);
         scoreboardButton.SetActive(false);
-        scoreboard.SetActive(true);
-        if (ScoreboardUpdate.NetworkError == false)
-        {
-            errorWindow.SetActive(false);
-        }
+        scoreboard.SetActive(true);        
     }
 
     public void CloseErrorWindow()
@@ -58,6 +59,11 @@ public class ButtomFunctions : MonoBehaviour {
         boss.SetActive(false);
         scoreboardButton.SetActive(true);
         returnMenu.SetActive(false);
+    }
+
+    public void EnableNetworkErrorWindow()
+    {
+        errorWindow.SetActive(true);
     }
 
 }

@@ -6,9 +6,11 @@ using UnityEngine.UI;
 
 public class ScoreboardUpdate : MonoBehaviour {
 
+    public delegate void ShowNetworkErrorWindow();
+    public static event ShowNetworkErrorWindow onNetworkError;
+
     public string ServerIP, tableName;
     private string URL;
-    public static bool NetworkError;
     public GameObject[] level1Names = new GameObject[10];
     public GameObject[] level1Scores = new GameObject[10];
     public GameObject[] level2Names = new GameObject[10];
@@ -17,8 +19,7 @@ public class ScoreboardUpdate : MonoBehaviour {
     public GameObject[] level3Scores = new GameObject[10];
     public static Scores[] levelScore = new Scores[3];
     
-    void Start () {
-        NetworkError = true;
+    void Start () {        
         URL = (ServerIP + tableName);
         StartCoroutine(GetLevel1Score(URL));
         StartCoroutine(GetLevel2Score(URL));
@@ -34,8 +35,13 @@ public class ScoreboardUpdate : MonoBehaviour {
             yield return www.SendWebRequest();
 
             if (www.isNetworkError || www.isHttpError)
-            {
-                NetworkError = true;
+            {                
+                if (onNetworkError != null) {
+                    onNetworkError();
+                } else
+                {
+                    Debug.Log("ta null");
+                }                
             }
             else
             {
@@ -57,8 +63,15 @@ public class ScoreboardUpdate : MonoBehaviour {
             yield return www.SendWebRequest();
 
             if (www.isNetworkError || www.isHttpError)
-            {
-                NetworkError = true;
+            {               
+                if (onNetworkError != null)
+                {
+                    onNetworkError();
+                }
+                else
+                {
+                    Debug.Log("ta null");
+                }                
             }
             else
             {
@@ -79,12 +92,18 @@ public class ScoreboardUpdate : MonoBehaviour {
             yield return www.SendWebRequest();
 
             if (www.isNetworkError || www.isHttpError)
-            {
-                NetworkError = true;
+            {                
+                if (onNetworkError != null)
+                {
+                    onNetworkError();
+                }
+                else
+                {
+                    Debug.Log("ta null");
+                }                
             }
             else
-            {
-                NetworkError = false;
+            {                
                 levelScore[2] = JsonUtility.FromJson<Scores>(www.downloadHandler.text);
                 for (int i = 0; i < levelScore[2].resp.Length; i++)
                 {                    
