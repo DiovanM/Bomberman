@@ -5,9 +5,11 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class NewHighscore : MonoBehaviour {
+public class NewHighscore : MonoBehaviour
+{
 
-    public string serverip, tableName;
+    private string serverip = "https://bombermanscoremanager.herokuapp.com/";
+    public string tableName;
     private string playerName, score;
     public static bool networkError;
     public GameObject text, window, connectionFailed, scoreSaved;

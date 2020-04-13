@@ -48,7 +48,7 @@ public class ScoreboardUpdate : MonoBehaviour {
                 levelScore[0] = JsonUtility.FromJson<Scores>(www.downloadHandler.text);
                 for (int i = 0; i < levelScore[0].resp.Length; i++)
                 {                    
-                    level1Names[i].GetComponent<Text>().text = levelScore[0].resp[i].nome;  
+                    level1Names[i].GetComponent<Text>().text = levelScore[0].resp[i].name;  
                     level1Scores[i].GetComponent<Text>().text = levelScore[0].resp[i].score;
                    
                 }
@@ -78,7 +78,7 @@ public class ScoreboardUpdate : MonoBehaviour {
                 levelScore[1] = JsonUtility.FromJson<Scores>(www.downloadHandler.text);
                 for (int i = 0; i < levelScore[1].resp.Length; i++)
                 {                    
-                    level2Names[i].GetComponent<Text>().text = levelScore[1].resp[i].nome;
+                    level2Names[i].GetComponent<Text>().text = levelScore[1].resp[i].name;
                     level2Scores[i].GetComponent<Text>().text = levelScore[1].resp[i].score;
                 }
             }
@@ -107,7 +107,7 @@ public class ScoreboardUpdate : MonoBehaviour {
                 levelScore[2] = JsonUtility.FromJson<Scores>(www.downloadHandler.text);
                 for (int i = 0; i < levelScore[2].resp.Length; i++)
                 {                    
-                    level3Names[i].GetComponent<Text>().text = levelScore[2].resp[i].nome;
+                    level3Names[i].GetComponent<Text>().text = levelScore[2].resp[i].name;
                     level3Scores[i].GetComponent<Text>().text = levelScore[2].resp[i].score;
                 }
             }
